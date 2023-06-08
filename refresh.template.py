@@ -668,7 +668,8 @@ _get_files.extensions_to_language_args = { # Note that clangd fails on the --lan
 }
 _get_files.extensions_to_language_args = {ext : flag for exts, flag in _get_files.extensions_to_language_args.items() for ext in exts} # Flatten map for easier use
 _get_files.c_family_source_extensions = _get_files.c_source_extensions + _get_files.cpp_source_extensions + _get_files.objc_source_extensions + _get_files.objcpp_source_extensions + _get_files.cuda_source_extensions + _get_files.opencl_source_extensions + _get_files.openclxx_source_extensions + _get_files.assembly_source_extensions + _get_files.assembly_needing_c_preprocessor_source_extensions
-_get_files.source_extensions = _get_files.c_families_source_extensions + '.swift'
+_get_files.swift_extensions = ('.swift',)
+_get_files.source_extensions = _get_files.c_family_source_extensions + _get_files.swift_extensions
 
 
 @functools.lru_cache(maxsize=None)
